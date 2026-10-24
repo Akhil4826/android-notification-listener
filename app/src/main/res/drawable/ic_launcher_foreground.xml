@@ -1,0 +1,106 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Phone Body (Crisp Modern White Frame) -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M 33,26 L 53,26 A 6,6 0 0 1 59,32 L 59,76 A 6,6 0 0 1 53,82 L 33,82 A 6,6 0 0 1 27,76 L 27,32 A 6,6 0 0 1 33,26 Z" />
+
+    <!-- Phone Screen (Deep Slate Glass) -->
+    <path
+        android:fillColor="#FF0F172A"
+        android:pathData="M 34,31 L 52,31 A 3,3 0 0 1 55,34 L 55,74 A 3,3 0 0 1 52,77 L 34,77 A 3,3 0 0 1 31,74 L 31,34 A 3,3 0 0 1 34,31 Z" />
+
+    <!-- Top Speaker Ear Piece -->
+    <path
+        android:strokeColor="#FF94A3B8"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:pathData="M 40,28.5 L 46,28.5" />
+
+    <!-- Screen Bottom Home Bar -->
+    <path
+        android:strokeColor="#FF475569"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:pathData="M 39,74 L 47,74" />
+
+    <!-- Waveform: Reading & Speech Synthesis inside Screen -->
+    <!-- Sound Bar 1 (Cyan) -->
+    <path
+        android:strokeColor="#FF38BDF8"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M 35,58 L 35,50" />
+
+    <!-- Sound Bar 2 (Indigo) -->
+    <path
+        android:strokeColor="#FF818CF8"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M 39,64 L 39,44" />
+
+    <!-- Sound Bar 3 (Vibrant Violet / Main Peak) -->
+    <path
+        android:strokeColor="#FFA78BFA"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:pathData="M 43,67 L 43,41" />
+
+    <!-- Sound Bar 4 (Cyan) -->
+    <path
+        android:strokeColor="#FF38BDF8"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M 47,62 L 47,46" />
+
+    <!-- Sound Bar 5 (Indigo) -->
+    <path
+        android:strokeColor="#FF818CF8"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M 51,57 L 51,51" />
+
+    <!-- Radiating Voice Acoustic Waves (Alexa Reader Waves) -->
+    <!-- Wave 1: Inner (Electric Cyan) -->
+    <path
+        android:strokeColor="#FF38BDF8"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:pathData="M 64,45 A 13,13 0 0 1 64,63" />
+
+    <!-- Wave 2: Middle (Bright Indigo) -->
+    <path
+        android:strokeColor="#FF818CF8"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:pathData="M 70,39 A 21,21 0 0 1 70,69" />
+
+    <!-- Wave 3: Outer (Electric Violet) -->
+    <path
+        android:strokeColor="#FFA78BFA"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:pathData="M 76,33 A 29,29 0 0 1 76,75" />
+
+    <!-- Smart Notification Beacon on Phone Corner -->
+    <!-- Outer Glow Ring -->
+    <path
+        android:strokeColor="#80F43F5E"
+        android:strokeWidth="1.5"
+        android:pathData="M 54,25 A 6.5,6.5 0 1 1 53.99,25" />
+
+    <!-- Inner Solid Coral / Red Alert Dot -->
+    <path
+        android:fillColor="#FFF43F5E"
+        android:pathData="M 54,25 A 4.5,4.5 0 1 1 53.99,25" />
+
+    <!-- Central White Pin Core -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M 54,25 A 1.8,1.8 0 1 1 53.99,25" />
+
+</vector>

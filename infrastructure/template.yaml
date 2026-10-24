@@ -1,0 +1,158 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Personal Phone Reader: AWS Lambda, DynamoDB and API Gateway infrastructure
+  for reading Android phone notifications on Amazon Echo devices.
+
+Parameters:
+  ApiToken:
+    Type: String
+    NoEcho: true
+    Description: Secret bearer token for Android phone authentication.
+    Default: 'change-me-to-a-strong-secret-token'
+  DeviceId:
+    Type: String
+    Description: Device ID from the Android app Settings screen.
+    Default: 'default-personal-device'
+  AlexaSkillId:
+    Type: String
+    Description: Alexa Skill ID (amzn1.ask.skill.xxx) from Alexa Developer Console.
+    Default: ''
+  RetentionDays:
+    Type: Number
+    Description: Days to retain notification records before automatic DynamoDB TTL deletion.
+    Default: 7
+  PrivacyMode:
+    Type: String
+    Description: If true, Alexa announces app name without reading message text aloud.
+    Default: 'false'
+    AllowedValues: ['true', 'false']
+
+Conditions:
+  HasSkillId: !Not [!Equals [!Ref AlexaSkillId, '']]
+
+Globals:
+  Function:
+    Timeout: 10
+    MemorySize: 256
+    Runtime: nodejs20.x
+    Architectures:
+      - arm64 # Graviton2 (cheaper, faster cold starts, included in free tier)
+
+Resources:
+  # ====================================================================
+  # DynamoDB Table (Pay-per-request: Zero cost when idle, 25GB free tier)
+  # ====================================================================
+  PhoneReaderTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: PhoneReaderNotifications
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: deviceId
+          AttributeType: S
+        - AttributeName: notificationKey
+          AttributeType: S
+      KeySchema:
+        - AttributeName: deviceId
+          KeyType: HASH
+        - AttributeName: notificationKey
+          KeyType: RANGE
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+      Tags:
+        - Key: Project
+          Value: PhoneReader
+
+  # ====================================================================
+  # HTTP API Gateway (Low latency, 1 million free calls/mo)
+  # ====================================================================
+  PhoneReaderHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowMethods:
+          - GET
+          - POST
+          - DELETE
+          - OPTIONS
+        AllowHeaders:
+          - Content-Type
+          - Authorization
+          - X-Device-Id
+          - X-Api-Key
+        AllowOrigins:
+          - '*'
+
+  # ====================================================================
+  # Backend API Lambda (Ingestion & Data API for Android)
+  # ====================================================================
+  PhoneReaderApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../backend/
+      Handler: src/api.handler
+      Description: Ingestion and query API for Android Phone Notification Listener.
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref PhoneReaderTable
+          API_TOKEN: !Ref ApiToken
+          RETENTION_DAYS: !Ref RetentionDays
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref PhoneReaderTable
+      Events:
+        ApiRoot:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PhoneReaderHttpApi
+            Path: /api/{proxy+}
+            Method: ANY
+        ApiBase:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PhoneReaderHttpApi
+            Path: /api
+            Method: ANY
+
+  # ====================================================================
+  # Alexa Skill Lambda (Direct handler for Echo Dot requests)
+  # ====================================================================
+  PhoneReaderAlexaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../alexa/
+      Handler: src/index.handler
+      Description: Alexa Skill Custom Handler for Phone Reader.
+      Timeout: 8 # Alexa speech timeout limit
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref PhoneReaderTable
+          DEVICE_ID: !Ref DeviceId
+          PRIVACY_MODE: !Ref PrivacyMode
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref PhoneReaderTable
+      Events:
+        AlexaSkillEvent:
+          Type: AlexaSkill
+          Properties:
+            SkillId: !If [HasSkillId, !Ref AlexaSkillId, !Ref "AWS::NoValue"]
+
+Outputs:
+  HttpApiUrl:
+    Description: Base URL for Android app settings (append /api/notifications).
+    Value: !Sub '${PhoneReaderHttpApi.ApiEndpoint}/api/notifications'
+
+  HealthCheckUrl:
+    Description: Public health check URL to verify backend is active.
+    Value: !Sub '${PhoneReaderHttpApi.ApiEndpoint}/api/health'
+
+  AlexaFunctionArn:
+    Description: Copy and paste this ARN into the Alexa Developer Console Endpoint field.
+    Value: !GetAtt PhoneReaderAlexaFunction.Arn
+
+  DynamoDBTableName:
+    Description: DynamoDB Table Name.
+    Value: !Ref PhoneReaderTable

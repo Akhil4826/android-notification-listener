@@ -1,0 +1,62 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Phone Reader",
+          "summary": "Reads notifications from your personal Android phone.",
+          "description": "Phone Reader allows you to securely ask your Echo device to read active notifications from your personal Android phone, including WhatsApp, Instagram, and Gmail messages.",
+          "examplePhrases": [
+            "Alexa, ask Phone Reader to read my notifications",
+            "Alexa, ask Phone Reader what my latest notification says",
+            "Alexa, ask Phone Reader to read my WhatsApp notifications"
+          ],
+          "keywords": [
+            "notifications",
+            "android",
+            "phone reader",
+            "whatsapp",
+            "messages"
+          ]
+        },
+        "en-IN": {
+          "name": "Phone Reader",
+          "summary": "Reads notifications from your personal Android phone.",
+          "description": "Phone Reader allows you to securely ask your Echo Dot to read active notifications from your personal Android phone, including WhatsApp, Instagram, and Gmail messages.",
+          "examplePhrases": [
+            "Alexa, ask Phone Reader to read my notifications",
+            "Alexa, ask Phone Reader what my latest notification says",
+            "Alexa, ask Phone Reader to read my WhatsApp notifications"
+          ],
+          "keywords": [
+            "notifications",
+            "android",
+            "phone reader",
+            "whatsapp",
+            "messages"
+          ]
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Personal use skill. Connects to user deployed AWS backend endpoint.",
+      "category": "UTILITIES",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:ap-south-1:123456789012:function:PhoneReaderAlexaFunction"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}

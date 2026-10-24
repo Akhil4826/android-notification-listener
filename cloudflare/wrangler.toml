@@ -1,0 +1,22 @@
+name = "phone-reader-api"
+main = "src/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 Database binding
+# Run 'npx wrangler d1 create phone_reader_db' to obtain your database_id,
+# then replace the placeholder below with your actual database_id.
+[[d1_databases]]
+binding = "DB"
+database_name = "phone_reader_db"
+database_id = "92b4a575-6bbd-410a-a763-b8bfc590674c"
+
+[vars]
+RETENTION_DAYS = 7
+# Note: Sensitive secrets like API_TOKEN must NOT be placed here.
+# Instead, run 'npx wrangler secret put API_TOKEN' to store them encrypted in Cloudflare.
+
+# Automatic daily cleanup schedule (runs 3:00 AM UTC daily, completely free)
+[triggers]
+crons = ["0 3 * * *"]
+

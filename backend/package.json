@@ -1,0 +1,16 @@
+{
+  "name": "phone-reader-backend",
+  "version": "1.0.0",
+  "description": "Secure AWS Lambda & DynamoDB backend for Personal Phone Reader Alexa Skill",
+  "main": "src/api.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.750.0",
+    "@aws-sdk/lib-dynamodb": "^3.750.0"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}

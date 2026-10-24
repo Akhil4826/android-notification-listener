@@ -1,0 +1,16 @@
+{
+  "name": "phone-reader-alexa-skill",
+  "version": "1.0.0",
+  "description": "Amazon Alexa Custom Skill for Personal Phone Notification Reader",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "ask-sdk-core": "^2.14.0",
+    "ask-sdk-model": "^1.40.0",
+    "compromise": "^14.18.0"
+  },
+  "license": "ISC"
+}

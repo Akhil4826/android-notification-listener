@@ -1,0 +1,877 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "mobile",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "cancel",
+            "never mind",
+            "exit"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help",
+            "help me",
+            "what can you do",
+            "how do I use this"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "stop",
+            "quit",
+            "goodbye",
+            "bye"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+            "yes",
+            "sure",
+            "yeah",
+            "please do"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+            "no",
+            "nope",
+            "not now"
+          ]
+        },
+        {
+          "name": "ReadNotificationsIntent",
+          "slots": [],
+          "samples": [
+            "read my notifications",
+            "read notifications",
+            "read all my active notifications",
+            "read my active notifications",
+            "show my notification",
+            "show my notifications",
+            "show me my notification",
+            "show me my notifications",
+            "show notification",
+            "show notifications",
+            "read my notification",
+            "get my notifications",
+            "get my notification",
+            "what notifications do I have",
+            "check my notifications",
+            "check notifications",
+            "tell me my notifications",
+            "what are my notifications"
+          ]
+        },
+        {
+          "name": "ReadLatestNotificationIntent",
+          "slots": [],
+          "samples": [
+            "what my latest notification says",
+            "read my latest notification",
+            "what is my latest notification",
+            "what's my latest notification",
+            "what was that notification",
+            "what did my phone just get",
+            "what did I just get",
+            "latest notification"
+          ]
+        },
+        {
+          "name": "ReadNotificationsByAppIntent",
+          "slots": [
+            {
+              "name": "appName",
+              "type": "APP_NAME_TYPE"
+            }
+          ],
+          "samples": [
+            "read my {appName} notification",
+            "read my {appName} notifications",
+            "tell me {appName} notification",
+            "tell me {appName} notifications",
+            "tell me my {appName} notification",
+            "tell me my {appName} notifications",
+            "tell me {appName}",
+            "tell me about {appName}",
+            "tell me notifications from {appName}",
+            "tell me from {appName}",
+            "read {appName} notification",
+            "read {appName} notifications",
+            "read {appName}",
+            "check {appName} notification",
+            "check {appName} notifications",
+            "check my {appName} notification",
+            "check my {appName} notifications",
+            "check {appName}",
+            "what is my {appName} notification",
+            "what are my {appName} notifications",
+            "what did {appName} send",
+            "what did {appName} send me",
+            "what is on {appName}",
+            "what's on {appName}",
+            "what did I get on {appName}",
+            "what did I get from {appName}",
+            "any notification from {appName}",
+            "any notifications from {appName}",
+            "any message from {appName}",
+            "any messages from {appName}",
+            "any notification on {appName}",
+            "any notifications on {appName}",
+            "any message on {appName}",
+            "any messages on {appName}",
+            "{appName} notification",
+            "{appName} notifications",
+            "{appName} message",
+            "{appName} messages",
+            "read notifications from {appName}",
+            "read messages from {appName}",
+            "read message from {appName}",
+            "get {appName} notification",
+            "get {appName} notifications",
+            "show {appName} notifications",
+            "open {appName} notifications"
+          ]
+        },
+        {
+          "name": "ReadNextNotificationIntent",
+          "slots": [],
+          "samples": [
+            "read the next notification",
+            "read next",
+            "next notification",
+            "next",
+            "continue"
+          ]
+        },
+        {
+          "name": "RepeatNotificationIntent",
+          "slots": [],
+          "samples": [
+            "repeat that",
+            "repeat",
+            "say that again",
+            "what was that again",
+            "can you repeat that",
+            "tell me that again"
+          ]
+        },
+        {
+          "name": "SummarizeNotificationsIntent",
+          "slots": [],
+          "samples": [
+            "how many notifications do I have",
+            "summarize my notifications",
+            "notification summary",
+            "summarize notifications",
+            "count my notifications",
+            "how many messages do I have"
+          ]
+        },
+        {
+          "name": "ClearNotificationsIntent",
+          "slots": [],
+          "samples": [
+            "clear my notifications",
+            "clear notifications",
+            "delete my notifications",
+            "clear all notifications",
+            "delete all notifications",
+            "remove all notifications"
+          ]
+        },
+        {
+          "name": "SetDndIntent",
+          "slots": [
+            {
+              "name": "status",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "turn {status} do not disturb",
+            "{status} do not disturb",
+            "turn do not disturb {status}",
+            "{status} d. n. d.",
+            "turn {status} d. n. d.",
+            "turn d. n. d. {status}",
+            "enable do not disturb",
+            "disable do not disturb",
+            "turn on do not disturb",
+            "turn off do not disturb",
+            "enable d. n. d.",
+            "disable d. n. d.",
+            "turn on d. n. d.",
+            "turn off d. n. d."
+          ]
+        },
+        {
+          "name": "GetDndStatusIntent",
+          "slots": [],
+          "samples": [
+            "what is my d. n. d. status",
+            "is do not disturb on",
+            "is d. n. d. on",
+            "check do not disturb",
+            "check d. n. d.",
+            "what are my priority apps",
+            "list priority apps",
+            "list my priority apps"
+          ]
+        },
+        {
+          "name": "AddPriorityAppIntent",
+          "slots": [
+            {
+              "name": "appName",
+              "type": "APP_NAME_TYPE"
+            }
+          ],
+          "samples": [
+            "add {appName} to priority",
+            "add {appName} to v. i. p.",
+            "allow {appName} in do not disturb",
+            "add {appName} to priority list",
+            "prioritize {appName}"
+          ]
+        },
+        {
+          "name": "RemovePriorityAppIntent",
+          "slots": [
+            {
+              "name": "appName",
+              "type": "APP_NAME_TYPE"
+            }
+          ],
+          "samples": [
+            "remove {appName} from priority",
+            "remove {appName} from v. i. p.",
+            "remove {appName} from do not disturb",
+            "remove {appName} from priority list",
+            "do not prioritize {appName}"
+          ]
+        },
+        {
+          "name": "ReadNotificationsBySenderIntent",
+          "slots": [
+            {
+              "name": "senderName",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "did {senderName} text me",
+            "did {senderName} message me",
+            "did {senderName} call me",
+            "did {senderName} send anything",
+            "did {senderName} send me anything",
+            "any message from {senderName}",
+            "any messages from {senderName}",
+            "any text from {senderName}",
+            "any texts from {senderName}",
+            "any notification from {senderName}",
+            "any notifications from {senderName}",
+            "what did {senderName} text me",
+            "what did {senderName} send me",
+            "what did {senderName} send",
+            "what did {senderName} say",
+            "check messages from {senderName}",
+            "check message from {senderName}",
+            "check {senderName} message",
+            "check {senderName} messages",
+            "read messages from {senderName}",
+            "read message from {senderName}",
+            "messages from {senderName}",
+            "message from {senderName}",
+            "notifications from {senderName}",
+            "notification from {senderName}",
+            "i want from {senderName} notification",
+            "i want from {senderName} notifications",
+            "i want {senderName} notification",
+            "i want {senderName} notifications",
+            "i want notifications from {senderName}",
+            "i want from {senderName}",
+            "read my latest notifications from {senderName}",
+            "read my latest notification from {senderName}",
+            "read my latest notifications from {senderName} contact",
+            "read notifications from {senderName} contact",
+            "read my latest whatsapp notifications from {senderName}",
+            "read my latest whatsapp notification from {senderName}",
+            "read whatsapp notifications from {senderName}",
+            "read whatsapp messages from {senderName}",
+            "notifications from {senderName} on whatsapp",
+            "messages from {senderName} on whatsapp",
+            "read my latest instagram notifications from {senderName}",
+            "read my latest instagram notification from {senderName}",
+            "read instagram notifications from {senderName}",
+            "read instagram messages from {senderName}",
+            "notifications from {senderName} on instagram",
+            "messages from {senderName} on instagram",
+            "read my latest insta notifications from {senderName}",
+            "read insta notifications from {senderName}",
+            "notifications from {senderName} on insta",
+            "messages from {senderName} on insta",
+            "read telegram notifications from {senderName}",
+            "notifications from {senderName} on telegram",
+            "messages from {senderName} on telegram",
+            "read notifications from {senderName}",
+            "read notification from {senderName}",
+            "from {senderName} notification",
+            "from {senderName} notifications",
+            "from {senderName} contact",
+            "from {senderName}"
+          ]
+        },
+        {
+          "name": "WhoMessagedMeIntent",
+          "slots": [],
+          "samples": [
+            "who messaged me",
+            "who texted me",
+            "who sent me a message",
+            "who sent me messages",
+            "who sent me notifications",
+            "who sent notifications",
+            "did anyone text me",
+            "did anyone message me",
+            "who contacted me"
+          ]
+        },
+        {
+          "name": "ReadOtpIntent",
+          "slots": [],
+          "samples": [
+            "what is my otp",
+            "what's my otp",
+            "what is my code",
+            "what's my code",
+            "what is my verification code",
+            "what's my verification code",
+            "read my otp",
+            "read otp",
+            "read my verification code",
+            "read verification code",
+            "did i get an otp",
+            "did my otp come",
+            "did my otp arrive",
+            "any otp",
+            "get my otp",
+            "tell me my otp",
+            "tell me otp",
+            "check my otp"
+          ]
+        },
+        {
+          "name": "CheckPhoneStatusIntent",
+          "slots": [],
+          "samples": [
+            "how is my phone",
+            "how is the phone",
+            "is my phone connected",
+            "is phone connected",
+            "phone status",
+            "check my phone",
+            "check phone",
+            "check phone status",
+            "is listener active",
+            "is the listener working",
+            "is phone reader connected",
+            "phone heartbeat"
+          ]
+        },
+        {
+          "name": "ClearNotificationsByAppIntent",
+          "slots": [
+            {
+              "name": "appName",
+              "type": "APP_NAME_TYPE"
+            }
+          ],
+          "samples": [
+            "clear {appName} notifications",
+            "clear {appName} notification",
+            "clear my {appName} notifications",
+            "clear my {appName} notification",
+            "delete {appName} notifications",
+            "delete my {appName} notifications",
+            "delete notifications from {appName}",
+            "clear notifications from {appName}"
+          ]
+        },
+        {
+          "name": "ReplyMessageIntent",
+          "slots": [
+            {
+              "name": "senderName",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "appName",
+              "type": "APP_NAME_TYPE"
+            },
+            {
+              "name": "replyMessage",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "message {replyMessage}",
+            "tell {replyMessage}",
+            "say {replyMessage}",
+            "send {replyMessage}",
+            "send a message {replyMessage}",
+            "send message {replyMessage}",
+            "text {replyMessage}",
+            "drop a text {replyMessage}",
+            "drop a message {replyMessage}",
+            "let them know {replyMessage}",
+            "write to {replyMessage}",
+            "write back {replyMessage}",
+            "write {replyMessage}",
+            "yes tell {replyMessage}",
+            "yes message {replyMessage}",
+            "yes reply {replyMessage}",
+            "yes send {replyMessage}",
+            "yes {replyMessage}",
+            "reply saying {replyMessage}",
+            "reply that {replyMessage}",
+            "reply with {replyMessage}",
+            "reply {replyMessage}",
+            "reply to {senderName}",
+            "message {senderName}",
+            "text {senderName}",
+            "send a message to {senderName}",
+            "send message to {senderName}",
+            "write to {senderName}",
+            "reply on {appName}",
+            "reply using {appName}",
+            "message on {appName}",
+            "send message on {appName}",
+            "send reply to {senderName}",
+            "send reply to {senderName} on whatsapp",
+            "send reply to {senderName} on instagram",
+            "send reply to {senderName} on insta",
+            "reply to {senderName} on whatsapp",
+            "reply to {senderName} on instagram",
+            "reply to {senderName} on insta",
+            "send message to {senderName} on whatsapp",
+            "send message to {senderName} on instagram",
+            "reply to a message",
+            "reply to a message to {senderName}",
+            "to {senderName}",
+            "send reply",
+            "reply"
+          ]
+        },
+        {
+          "name": "ConfirmSecretPinIntent",
+          "slots": [
+            {
+              "name": "secretPin",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "secret key is {secretPin}",
+            "my secret key is {secretPin}",
+            "secret pin is {secretPin}",
+            "my secret pin is {secretPin}",
+            "the secret key is {secretPin}",
+            "pin is {secretPin}",
+            "key is {secretPin}",
+            "my key is {secretPin}",
+            "code is {secretPin}",
+            "the pin is {secretPin}",
+            "the key is {secretPin}",
+            "confirm with {secretPin}",
+            "it is {secretPin}",
+            "{secretPin}"
+          ]
+        },
+        {
+          "name": "ChangeSecretKeyIntent",
+          "slots": [
+            {
+              "name": "oldPin",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            },
+            {
+              "name": "newPin",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "change my secret key",
+            "change my secret pin",
+            "change secret key",
+            "change secret pin",
+            "update secret key",
+            "update my secret key",
+            "update my pin",
+            "set a new secret key",
+            "set new secret key",
+            "change secret key from {oldPin} to {newPin}"
+          ]
+        },
+        {
+          "name": "CheckBatteryIntent",
+          "slots": [],
+          "samples": [
+            "what is my battery level",
+            "what is my phone battery",
+            "what's my battery level",
+            "what's my phone battery",
+            "check my battery",
+            "check phone battery",
+            "phone battery",
+            "battery level",
+            "is my phone charging",
+            "how much battery do i have",
+            "battery status"
+          ]
+        },
+        {
+          "name": "FindMyPhoneIntent",
+          "slots": [],
+          "samples": [
+            "find my phone",
+            "where is my phone",
+            "ring my phone",
+            "make my phone ring",
+            "call my phone",
+            "locate my phone",
+            "stop ringing my phone",
+            "stop ringing",
+            "stop ringer",
+            "silence my phone"
+          ]
+        },
+        {
+          "name": "DismissFromPhoneIntent",
+          "slots": [
+            {
+              "name": "appName",
+              "type": "APP_NAME_TYPE"
+            }
+          ],
+          "samples": [
+            "dismiss notifications from my phone",
+            "dismiss notification from my phone",
+            "dismiss all notifications from my phone",
+            "dismiss {appName} notifications from my phone",
+            "clear notifications from my phone",
+            "clear {appName} notifications from my phone",
+            "clear {appName} from my phone",
+            "clear my phone notifications",
+            "clear my phone screen",
+            "clear notification bar on my phone"
+          ]
+        },
+        {
+          "name": "CheckMissedCallsIntent",
+          "slots": [],
+          "samples": [
+            "did anyone call me",
+            "did i miss any calls",
+            "did anyone call",
+            "check missed calls",
+            "any missed calls",
+            "who called me",
+            "missed calls",
+            "call history"
+          ]
+        },
+        {
+          "name": "VipContactsIntent",
+          "slots": [
+            {
+              "name": "contactName",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "add {contactName} to v. i. p.",
+            "add {contactName} to my v. i. p. list",
+            "add {contactName} to v. i. p. contacts",
+            "remove {contactName} from v. i. p.",
+            "remove {contactName} from my v. i. p. list",
+            "who are my v. i. p. contacts",
+            "list my v. i. p. contacts",
+            "what are my v. i. p. contacts"
+          ]
+        },
+        {
+          "name": "DailyBriefingIntent",
+          "slots": [],
+          "samples": [
+            "give me my morning briefing",
+            "morning briefing",
+            "daily briefing",
+            "evening briefing",
+            "daily summary",
+            "phone briefing",
+            "give me my briefing",
+            "brief me",
+            "status briefing"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "APP_NAME_TYPE",
+          "values": [
+            {
+              "name": {
+                "value": "WhatsApp",
+                "synonyms": [
+                  "what's app",
+                  "whatsapp messenger",
+                  "whats app",
+                  "watsapp",
+                  "vatsapp",
+                  "watsup",
+                  "wa"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Instagram",
+                "synonyms": [
+                  "insta",
+                  "instagram direct",
+                  "threads",
+                  "ig"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Gmail",
+                "synonyms": [
+                  "google mail",
+                  "email",
+                  "emails",
+                  "mail",
+                  "g mail"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Messages",
+                "synonyms": [
+                  "text messages",
+                  "sms",
+                  "texts",
+                  "text message",
+                  "text",
+                  "inbox"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Phone",
+                "synonyms": [
+                  "call",
+                  "calls",
+                  "missed call",
+                  "missed calls",
+                  "dialer",
+                  "truecaller"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Swiggy",
+                "synonyms": [
+                  "swigy",
+                  "instamart",
+                  "swiggy delivery"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Zomato",
+                "synonyms": [
+                  "zomto",
+                  "zomatto",
+                  "blinkit",
+                  "blink it"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Zepto",
+                "synonyms": [
+                  "zepto delivery"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Paytm",
+                "synonyms": [
+                  "pay tm"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "PhonePe",
+                "synonyms": [
+                  "phone pe"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Google Pay",
+                "synonyms": [
+                  "g pay",
+                  "gpay"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Telegram",
+                "synonyms": [
+                  "tg",
+                  "tele",
+                  "teligram"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Slack",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Discord",
+                "synonyms": [
+                  "discord server"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Snapchat",
+                "synonyms": [
+                  "snap",
+                  "snaps"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "YouTube",
+                "synonyms": [
+                  "yt",
+                  "you tube"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Spotify",
+                "synonyms": [
+                  "spotfy"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "LinkedIn",
+                "synonyms": [
+                  "linked in",
+                  "linkdin"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "X",
+                "synonyms": [
+                  "twitter"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Messenger",
+                "synonyms": [
+                  "facebook messenger"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Outlook",
+                "synonyms": [
+                  "microsoft outlook"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Teams",
+                "synonyms": [
+                  "microsoft teams"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "KFC",
+                "synonyms": [
+                  "kfc india"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Uber",
+                "synonyms": [
+                  "uber cab",
+                  "uber ride"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Ola",
+                "synonyms": [
+                  "ola cab",
+                  "ola ride"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
