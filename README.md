@@ -11,6 +11,10 @@ A privacy-first, zero-cost ($0.00) Android and Amazon Alexa ecosystem that empow
 
 Your phone stays silent. Notifications are processed at the cloud edge and spoken aloud **only when you ask Alexa**.
 
+<p align="center">
+  <img src="./images/demo.gif" alt="Mobile Reader End-to-End Live Voice & Android Interception Demo" width="100%">
+</p>
+
 ---
 
 ## 📥 Download Ready-to-Install Android APK
